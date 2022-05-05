@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 import math
-import sys, time
 import base64
 import os
+
+UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'upload/')
 
 def nn_interpolate(file_name, scale_factor):
     image = cv2.imread('upload/'+file_name)
@@ -24,7 +25,7 @@ def nn_interpolate(file_name, scale_factor):
         for j in range(scaled_weight):
             scaled_image[i, j] = image[row_position[i], column_position[j]]
             
-    new_file_name = 'upload/'+file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
+    new_file_name = UPLOAD_FOLDER + file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
     cv2.imwrite(new_file_name, scaled_image)
     with open(new_file_name, "rb") as f:
         im_b64 = base64.b64encode(f.read()).decode("utf-8")
@@ -93,7 +94,7 @@ def bicubic(file_name, scale_factor, a=-1/2):
                 mat_r = np.matrix([[u(y1,a)],[u(y2,a)],[u(y3,a)],[u(y4,a)]])
                 scaled_image[j, i, c] = np.dot(np.dot(mat_l, mat_m),mat_r)
 
-    new_file_name = 'upload/'+file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
+    new_file_name = UPLOAD_FOLDER + file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
     cv2.imwrite(new_file_name, scaled_image)
     with open(new_file_name, "rb") as f:
         im_b64 = base64.b64encode(f.read()).decode("utf-8")
@@ -126,7 +127,7 @@ def bilinear(file_name, scale_factor):
             red = a[2] * (1 - x_diff) * (1 - y_diff) + b[2] * (x_diff) * (1-y_diff) + c[2] * y_diff * (1 - x_diff)   + d[2] * (x_diff * y_diff)
             scaled_image[j, i] = (blue, green, red)
 
-    new_file_name = 'upload/'+file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
+    new_file_name = UPLOAD_FOLDER + file_name.split('.')[0]+'_new.'+file_name.split('.')[1]
     cv2.imwrite(new_file_name, scaled_image)
     with open(new_file_name, "rb") as f:
         im_b64 = base64.b64encode(f.read()).decode("utf-8")

@@ -7,7 +7,7 @@ import script
 
 
 SECRET_KEY = os.urandom(32)
-UPLOAD_FOLDER = "upload/"
+UPLOAD_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'upload/')
 
 app = Flask(__name__, template_folder='templates', static_folder='frontend')
 app.config['SECRET_KEY'] = SECRET_KEY
@@ -49,7 +49,7 @@ def upload_file():
             return jsonify(result='error', data="File name is empty!")
         else:
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            file.save(app.config['UPLOAD_FOLDER'] + filename)
             new_image = None
             if request.form.get('alghoritm') == '1':
                 new_image = script.nn_interpolate(filename, int(request.form.get('scale')))
@@ -58,7 +58,7 @@ def upload_file():
             if request.form.get('alghoritm') == '3': 
                 new_image = script.bilinear(filename, int(request.form.get('scale')))
             
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            os.remove(app.config['UPLOAD_FOLDER'] + filename)
             return  jsonify({'result': 'success', 'image': new_image})
 
                 
