@@ -78,6 +78,7 @@ function uploadFile() {
         success: function(data) {
             if (data['result'] === 'error') {
                 alert(data['data']);
+                $('.loader').prop('style', 'display: none;');
             } else {
                 var a = document.createElement("a"); //Create <a>
                 a.href = "data:image/jpg;base64," + data['image']; //Image Base64 Goes here
@@ -165,6 +166,14 @@ function drag_and_drop() {
     });
 }
 
+function loader() {
+    var inputFile = $("#file");
+    $('.start_button').on('click', function() {
+        if (inputFile.prop('files').length) {
+            $('.loader').prop('style', 'display: block;');
+        }
+    });
+}
 
 function switch_about_block() {
     form_alg = $('.choose_alghoritm_form');
@@ -196,6 +205,7 @@ $(document).ready(function() {
     initComparisons();
     switch_about_block();
     drag_and_drop();
+    loader();
     $('#upload').click(function() {
         $('#file').click();
     });
