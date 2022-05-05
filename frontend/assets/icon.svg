@@ -1,0 +1,15 @@
+<svg width="382" height="390" viewBox="0 0 382 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="13.6066" y1="14.3934" x2="84.3173" y2="85.1041" stroke="black" stroke-width="30"/>
+<line x1="371.317" y1="10.6066" x2="300.607" y2="81.3173" stroke="black" stroke-width="30"/>
+<line x1="84.3173" y1="304.607" x2="13.6066" y2="375.317" stroke="black" stroke-width="30"/>
+<line x1="300.607" y1="307.393" x2="371.317" y2="378.104" stroke="black" stroke-width="30"/>
+<rect x="55" y="143" width="269" height="129" fill="white" stroke="black" stroke-width="20"/>
+<path d="M62.5 260.5L142.5 180L206.5 244L248.5 202L315 265" stroke="black" stroke-width="20"/>
+<line x1="367" x2="367" y2="106" stroke="black" stroke-width="30"/>
+<line x1="15" x2="15" y2="106" stroke="black" stroke-width="30"/>
+<line x1="15" y1="284" x2="15" y2="390" stroke="black" stroke-width="30"/>
+<line x1="367" y1="284" x2="367" y2="390" stroke="black" stroke-width="30"/>
+<path d="M108.5 15L2.5 15M381 15L275 15" stroke="black" stroke-width="30"/>
+<path d="M106 375L0 375" stroke="black" stroke-width="30"/>
+<path d="M381 375L275 375" stroke="black" stroke-width="30"/>
+</svg>

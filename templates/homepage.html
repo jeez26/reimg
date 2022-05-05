@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block background %}
+<div class="img-comp-container">
+    <div class="img-comp-img">
+        <img src="{{ url_for('static', filename='assets/background_pixel.jpg') }}">
+    </div>
+    <div class="img-comp-slider">
+        <div class="time_before_after">After</div>
+        <div class="img-comp-circle"></div>
+        <div class="time_before_after">Before</div>
+    </div>
+    <div class="img-comp-line"></div>
+    <div class="img-comp-img img-comp-overlay">
+        <img src="{{ url_for('static', filename='assets/background.jpg') }}">
+    </div>
+</div>
+
+{% endblock %} {% block content %}
+<div class="content">
+    <div class="half_block main_block">
+        <div class="header_text">RESIZE YOUR IMAGE</div>
+        <div class="text mt-5-per">
+            REIMG - This is a web service for improving the quality of a photo. This service is completely FREE and will help you enlarge your favorite images. This service is built on implemented super resolution algorithms.
+        </div>
+        <a href="/resize">
+            <button class="button mt-5-per">resize</button>
+        </a>
+    </div>
+    <div class="half_block main_block">
+
+    </div>
+</div>
+{% endblock %}

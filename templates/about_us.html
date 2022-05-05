@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block background %}
+<div class="img-comp-container z-1">
+    <div class="img-comp-img">
+        <img src="{{ url_for('static', filename='assets/background.jpg') }}">
+    </div>
+</div>
+{% endblock %} {% block content %}
+<div class="content">
+    <div class="half_block main_block">
+        <div class="header_text">About us</div>
+        <div class="text mt-5-per">
+            REIMG - project was developed by a student of Peter the Great St. Petersburg Polytechnic University (SPbPU) as part of the work on the discipline "Scientific research work" in 2022. This project is not commercial and is a pure demonstration of the work of the implemented Super-Resolution algorithms.
+            <div class="text_align_center">
+                <img src="{{ url_for('static', filename='assets/logo.png') }}">
+            </div>
+        </div>
+    </div>
+    <div class="half_block main_block pl_10_per">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Addb60f4a4526db13fad15bc7898ca52af7843b61d08f8a9186c8e7c6d1570ae9&amp;width=600&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
+</div>
+{% endblock %}

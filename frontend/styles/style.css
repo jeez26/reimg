@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+.img-comp-container {
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+}
+
+.img-comp-img {
+    box-sizing: border-box;
+    position: fixed;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.img-comp-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+}
+
+.img-comp-img img {
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: block;
+}
+
+.img-comp-slider {
+    z-index: 1;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+}
+
+.img-comp-circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url("/frontend/assets/circle.png");
+    background-size: contain;
+}
+
+.img-comp-line {
+    background-color: white;
+    width: 2px;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    z-index: 2;
+}
+
+.content {
+    color: white;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.half_block {
+    vertical-align: top;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 49%;
+}
+
+.main_block {
+    margin-top: 15%;
+}
+
+.header_text {
+    font-family: 'Aldrich', sans-serif;
+    font-size: 63px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button,
+.start_button {
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 300px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    color: white;
+    height: 70px;
+    border: none;
+    background-color: rgba(70, 168, 71, 0.6);
+}
+
+.start_button {
+    margin-top: 20px;
+    font-size: 24px;
+    width: 150px;
+    height: 50px;
+}
+
+.button:hover,
+.start_button:hover {
+    background-color: rgba(70, 168, 71, 0.8);
+}
+
+.button:active,
+.start_button:hover {
+    background-color: rgba(70, 168, 71, 1);
+}
+
+.slider {
+    position: relative;
+}
+
+.time_before_after {
+    color: white;
+    box-sizing: border-box;
+    height: 40px;
+    width: 80px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    padding-top: 11px;
+    text-transform: uppercase;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+}
+
+.header_logo {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    background-image: url("/frontend/assets/logo_white.svg");
+    background-size: cover;
+    width: 215px;
+    height: 40px;
+    display: inline-block;
+}
+
+.header_element {
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: bottom;
+    line-height: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.header_element:hover {
+    color: #46A847;
+}
+
+.header_line {
+    margin: 0 30px 0 30px;
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+}
+
+.load_file_block {
+    height: 300px;
+    width: 755px;
+    margin: 40px auto 0 auto;
+    border: 5px dashed #FFFFFF;
+    border-radius: 20px;
+    transition-duration: 0.3s;
+}
+
+.load_file_block:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.load_file_logo {
+    margin: 50px auto 0 auto;
+    padding: 22px;
+    box-sizing: border-box;
+    height: 90px;
+    width: 90px;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+}
+
+.load_file_title {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 36px;
+}
+
+.load_file_subtitle {
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Aldrich', sans-serif;
+    font-size: 24px;
+}
+
+.load_file_subtitle a {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #44B042;
+}
+
+.dark_block {
+    margin-top: 40px;
+    min-height: 370px;
+    width: 100vw;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.choose_alghoritm {
+    display: inline-block;
+    margin-top: 20px;
+    min-height: 20px;
+    width: 44%;
+}
+
+.about_alghoritm {
+    display: inline-block;
+    margin-top: 20px;
+    min-height: 20px;
+    width: 55%;
+}
+
+.rad_label {
+    position: relative;
+    height: 50px;
+}
+
+.rad_label label {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 24px;
+}
+
+.radio_input {
+    opacity: 0;
+}
+
+.radio_input:checked+.rad_design {
+    background: #44B042;
+}
+
+.rad_design {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background: none;
+}
+
+.scale_header {
+    font-size: 24px;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.input_number {
+    background: none;
+    font-size: 24px;
+    font-family: 'Aldrich', sans-serif;
+    width: 240px;
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.scale_support_text {
+    font-style: italic;
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+.choose_scale {
+    margin-left: 15px;
+}
+
+.input_file {
+    opacity: 0;
+}
+
+.mouseOverClass {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.separate_line {
+    height: 100%;
+    width: 2px;
+    background-color: white;
+}
+
+.about_NNI,
+.about_BI,
+.about_BIL {
+    font-size: 24px;
+}

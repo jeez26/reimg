@@ -1,0 +1,40 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+    -webkit-border-radius: 6px;
+}
+
+.pl_10_per {
+    padding-left: 10%;
+}
+
+.mt-5-per {
+    margin-top: 5%;
+}
+
+.mt-10-per {
+    margin-top: 10%
+}
+
+.mt-10 {
+    margin-top: 20px;
+}
+
+.mt-15-per {
+    margin-top: 15%;
+}
+
+.z-1 {
+    z-index: -1;
+}
+
+.text_align_center {
+    text-align: center;
+}
+
+.min-h-250 {
+    min-height: 250px;
+}

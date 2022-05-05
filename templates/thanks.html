@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block background %}
+<div class="img-comp-container z-1">
+    <div class="img-comp-img">
+        <img src="{{ url_for('static', filename='assets/background.jpg') }}">
+    </div>
+</div>
+{% endblock %} {% block content %}
+<div class="content text_align_center">
+    <div class="main_block">
+        <div class="header_text">Thank you for choosing us!</div>
+    </div>
+</div>
+{% endblock %}

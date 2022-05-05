@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% block background %}
+<div class="img-comp-container z-1">
+    <div class="img-comp-img">
+        <img src="{{ url_for('static', filename='assets/background.jpg') }}">
+    </div>
+</div>
+{% endblock %} {% block content %}
+<div class="content">
+    <div class="mt-10-per"></div>
+    <div class="header_text">LOAD YOUR IMAGE</div>
+    <div class="load_file_block" id="drop_zone">
+        <form class="load_file_form" method="POST" enctype="multipart/form-data">
+            <input type="hidden" class="csrf_token" name="csrf_token" value="{{ csrf_token() }}">
+            <input class="input_file" type="file" name="file" id="file">
+            <div class="load_file_logo">
+                <img src="{{ url_for('static', filename='assets/load_file.svg') }}">
+            </div>
+            <div class="load_file_title">DRAG and DROP</div>
+            <div class="load_file_subtitle">or <a id="upload">browse here</a></div>
+        </form>
+    </div>
+</div>
+<div class="dark_block">
+    <div class="content">
+        <div class="half_block mt-10">
+            <div class="header_text">CHOOSE ALGORITHM</div>
+            <div class="">
+                <form class="choose_alghoritm_form">
+                    <div class="half_block" style="width: 57%;">
+                        <div class="rad_label">
+
+                            <input type="radio" class="radio_input" id="NNI" name="alghoritm" value="1" checked>
+                            <div class="rad_design"></div>
+                            <label for="NNI">Nearest-neighbor interpolation</label>
+                        </div>
+                        <div class="rad_label">
+
+                            <input type="radio" class="radio_input" id="BI" name="alghoritm" value="2">
+                            <div class="rad_design"></div>
+                            <label for="BI">Bicubic interpolation</label>
+                        </div>
+                        <div class="rad_label">
+
+                            <input type="radio" class="radio_input" id="KIM" name="alghoritm" value="3">
+                            <div class="rad_design"></div>
+                            <label for="KIM">Bilinear interpolation</label>
+                        </div>
+
+                    </div>
+                    <div class="half_block" style="width: 42%;">
+                        <div class="choose_scale">
+                            <div class="scale_header">
+                                Magnification scale
+                            </div>
+                            <input type="number" class="input_number" max="5" min="1" step="1" placeholder="2" value="2">
+                            <div class="scale_support_text">min=1 max=5</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="half_block mt-10">
+            <div class="header_text" id="alg_titile">N-N interpolation</div>
+            <div class="about_NNI">
+                The nearest neighbor method is the simplest metric classifier based on the evaluation of the similarity of objects. The object being classified belongs to the class to which the objects of the training set closest to it belong.
+            </div>
+            <div class="about_BIL" style="display: none;">
+                Bilinear interpolation - in computational mathematics - a generalization of linear interpolation of one variable for functions of two variables. The generalization is based on applying the usual linear interpolation first in the direction of one of the
+                coordinates and then in the perpendicular direction.
+            </div>
+            <div class="about_BI" style="display: none;">
+                Bicubic interpolation is an extension of cubic interpolation in computational mathematics to the case of a function of two variables. The surface obtained as a result of bicubic interpolation is a smooth function on the boundaries of neighboring squares,
+                in contrast to the surfaces obtained as a result of bilinear interpolation or nearest neighbor interpolation. Bicubic interpolation gives a better picture than bilinear interpolation.
+            </div>
+            <a onclick="uploadFile()" target="_blank">
+                <button class="start_button">Start</button>
+            </a>
+        </div>
+    </div>
+    <img id="frame" src="" alt="">
+</div>
+{% endblock %}
